@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ToDoListService\ToDoListService.csproj" />
+      <ProjectReference Include="..\ToDoList\ToDoList.csproj" />
     </ItemGroup>
 
     <ItemGroup>

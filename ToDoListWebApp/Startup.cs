@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ToDoList;
 using ToDoListService;
 
 namespace ToDoListWebApp
@@ -24,6 +25,7 @@ namespace ToDoListWebApp
             {
                 options.UseSqlite(Configuration.GetConnectionString("Default"));
             });
+            services.AddScoped<ITaskLogic, TaskLogic>();
             services.AddControllersWithViews();
         }
 
