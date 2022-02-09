@@ -7,20 +7,20 @@ namespace ToDoListService
         /// <summary>
         /// Получить все задачи
         /// </summary>
-        IEnumerable<Task> GetTasks();
+        IEnumerable<TaskEntity> GetTasks();
         /// <summary>
         /// Добавить задачу
         /// </summary>
-        void AddTask(Task task);
+        void AddTask(TaskEntity taskEntity);
         /// <summary>
         /// Изменить задачу
         /// </summary>
-        void UpdateTask(Task task);
+        void UpdateTask(TaskEntity taskEntity);
         /// <summary>
         /// Удалить задачу
         /// </summary>
-        /// <param name="task">Объект задачи</param>
-        void DeleteTask(Task task);
+        /// <param name="taskEntity">Объект задачи</param>
+        void DeleteTask(TaskEntity taskEntity);
         /// <summary>
         /// Удалить задачу по Id
         /// </summary>

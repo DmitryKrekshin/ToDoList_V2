@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ToDoListService
 {
-    public class Task
+    public class TaskEntity
     {
         public int Id { get; set; }
         

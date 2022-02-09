@@ -14,36 +14,36 @@ namespace ToDoListService
         private readonly ToDoListContext _context;
 
         /// <inheritdoc />
-        public IEnumerable<Task> GetTasks()
+        public IEnumerable<TaskEntity> GetTasks()
         {
             return _context.Tasks.AsNoTracking();
         }
 
         /// <inheritdoc />
-        public void AddTask(Task task)
+        public void AddTask(TaskEntity taskEntity)
         {
-            _context.Tasks.Add(task);
+            _context.Tasks.Add(taskEntity);
             _context.SaveChanges();
         }
 
         /// <inheritdoc />
-        public void UpdateTask(Task task)
+        public void UpdateTask(TaskEntity taskEntity)
         {
-            var taskToUpdate = _context.Tasks.Find(task.Id);
+            var taskToUpdate = _context.Tasks.Find(taskEntity.Id);
 
             if (taskToUpdate is null)
             {
                 throw new NullReferenceException("Task doesn't exists");
             }
             
-            taskToUpdate = task;
+            taskToUpdate = taskEntity;
             _context.SaveChanges();
         }
 
         /// <inheritdoc />
-        public void DeleteTask(Task task)
+        public void DeleteTask(TaskEntity taskEntity)
         {
-            var taskToDelete = _context.Tasks.Find(task);
+            var taskToDelete = _context.Tasks.Find(taskEntity);
 
             if (taskToDelete is null)
             {

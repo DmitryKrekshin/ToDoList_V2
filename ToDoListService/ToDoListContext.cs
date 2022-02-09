@@ -6,6 +6,6 @@ namespace ToDoListService
     {
         public ToDoListContext(DbContextOptions<ToDoListContext> options) : base(options) { }
 
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskEntity> Tasks { get; set; }
     }
 }
