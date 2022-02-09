@@ -6,12 +6,12 @@ namespace ToDoListService
 {
     public class ToDoListService : IToDoListService
     {
-        private readonly ToDoListContext _context;
-
         public ToDoListService(ToDoListContext context)
         {
             _context = context;
         }
+        
+        private readonly ToDoListContext _context;
 
         /// <inheritdoc />
         public IEnumerable<Task> GetTasks()

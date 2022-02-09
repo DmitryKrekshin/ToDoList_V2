@@ -1,18 +1,18 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using ToDoList;
 using ToDoListWebApp.Models;
 
 namespace ToDoListWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ITaskLogic taskLogic)
         {
-            _logger = logger;
+            _taskLogic = taskLogic;
         }
+        
+        private readonly ITaskLogic _taskLogic;
 
         public IActionResult Index()
         {

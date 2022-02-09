@@ -5,13 +5,13 @@ namespace ToDoList
 {
     public class TaskLogic : ITaskLogic
     {
-        private readonly IToDoListService _service;
-
         public TaskLogic(IToDoListService service)
         {
             _service = service;
         }
         
+        private readonly IToDoListService _service;
+
         /// <inheritdoc/>
         public IEnumerable<Task> GetTasks()
         {
