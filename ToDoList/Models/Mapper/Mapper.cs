@@ -5,7 +5,7 @@ namespace ToDoList
 {
     public static class Map
     {
-        static Mapper TaskMapper()
+        public static IMapper TaskMapper()
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<TaskEntity, Task>());
 
