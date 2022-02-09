@@ -25,6 +25,7 @@ namespace ToDoListWebApp
             {
                 options.UseSqlite(Configuration.GetConnectionString("Default"));
             });
+            services.AddScoped<IToDoListService, ToDoListService.ToDoListService>();
             services.AddScoped<ITaskLogic, TaskLogic>();
             services.AddControllersWithViews();
         }
