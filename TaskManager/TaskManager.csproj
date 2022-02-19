@@ -2,10 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>ToDoList</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ToDoListService\ToDoListService.csproj" />
+      <ProjectReference Include="..\TaskService\TaskService.csproj" />
     </ItemGroup>
 
     <ItemGroup>

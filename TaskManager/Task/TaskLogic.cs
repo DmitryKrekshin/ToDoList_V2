@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using ToDoListService;
 
-namespace ToDoList
+namespace TaskManager
 {
     public class TaskLogic : ITaskLogic
     {

@@ -1,7 +1,7 @@
 using AutoMapper;
 using ToDoListService;
 
-namespace ToDoList
+namespace TaskManager
 {
     public static class Map
     {

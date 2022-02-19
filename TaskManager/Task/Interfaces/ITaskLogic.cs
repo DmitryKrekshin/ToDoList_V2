@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ToDoListService;
 
-namespace ToDoList
+namespace TaskManager
 {
     public interface ITaskLogic
     {

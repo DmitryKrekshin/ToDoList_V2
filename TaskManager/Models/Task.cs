@@ -1,4 +1,4 @@
-namespace ToDoList
+namespace TaskManager
 {
     public class Task
     {
