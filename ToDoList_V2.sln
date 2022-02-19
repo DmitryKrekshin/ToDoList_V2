@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListWebApp", "ToDoListWebApp\ToDoListWebApp.csproj", "{34CA34D1-97C1-4DAD-B86C-B427CDC6E980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListService", "ToDoListService\ToDoListService.csproj", "{4A6DE47C-3553-47FC-88F2-8F05625470CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskService", "TaskService\TaskService.csproj", "{4A6DE47C-3553-47FC-88F2-8F05625470CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList", "ToDoList\ToDoList.csproj", "{8AA8F670-DA84-4357-A8F4-6664A27124A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager", "TaskManager\TaskManager.csproj", "{8AA8F670-DA84-4357-A8F4-6664A27124A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
