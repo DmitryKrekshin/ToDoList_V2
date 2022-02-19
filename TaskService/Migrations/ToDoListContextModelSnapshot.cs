@@ -16,7 +16,7 @@ namespace ToDoListService.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.13");
 
-            modelBuilder.Entity("ToDoListService.TaskEntity", b =>
+            modelBuilder.Entity("TaskService.TaskEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
