@@ -16,6 +16,12 @@ namespace ToDoListService
         /// Изменить задачу
         /// </summary>
         void UpdateTask(TaskEntity taskEntity);
+
+        /// <summary>
+        /// Изменить статус задачи
+        /// </summary>
+        /// <param name="taskEntity"></param>
+        void UpdateStatusTask(TaskEntity taskEntity);
         /// <summary>
         /// Удалить задачу
         /// </summary>

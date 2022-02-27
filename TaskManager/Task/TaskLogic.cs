@@ -33,6 +33,12 @@ namespace TaskManager
         }
 
         /// <inheritdoc/>
+        public void UpdateTaskStatus(Task task)
+        {
+            _service.UpdateStatusTask(_mapper.Map<TaskEntity>(task));
+        }
+
+        /// <inheritdoc/>
         public void DeleteTask(int taskId)
         {
             _service.DeleteTask(taskId);

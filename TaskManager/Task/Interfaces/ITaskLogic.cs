@@ -19,6 +19,11 @@ namespace TaskManager
         /// </summary>
         void UpdateTask(Task task);
         /// <summary>
+        /// Обновить статус задачи
+        /// </summary>
+        /// <param name="task"></param>
+        void UpdateTaskStatus(Task task);
+        /// <summary>
         /// Удалить задачу
         /// </summary>
         void DeleteTask(int taskId);
