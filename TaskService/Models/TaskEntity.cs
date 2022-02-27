@@ -6,16 +6,15 @@ namespace ToDoListService
     public class TaskEntity
     {
         public int Id { get; set; }
-        
         [Required]
         public string Name { get; set; }
 
         public string Description { get; set; }
         
         public string AuthorName { get; set; }
-
+        [Required]
         public TaskStatus Status { get; set; }
-        
+        [Required]
         public DateTime CreateDate { get; set; }
     }
 }

@@ -7,7 +7,11 @@ namespace TaskManager
     {
         public static IMapper TaskMapper()
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<TaskEntity, Task>());
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<TaskEntity, Task>();
+                cfg.CreateMap<Task, TaskEntity>();
+            });
 
             return new Mapper(config);
         }
