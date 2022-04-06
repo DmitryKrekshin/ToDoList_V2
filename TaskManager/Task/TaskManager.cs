@@ -4,9 +4,9 @@ using ToDoListService;
 
 namespace TaskManager
 {
-    public class TaskLogic : ITaskLogic
+    public class TaskManager : ITaskManager
     {
-        public TaskLogic(IToDoListService service)
+        public TaskManager(IToDoListService service)
         {
             _service = service;
         }

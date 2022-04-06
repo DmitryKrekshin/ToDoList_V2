@@ -9,17 +9,17 @@ namespace ToDoListWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ITaskLogic _taskLogic;
+        private readonly ITaskManager _taskManager;
         private readonly IMapper _mapper = ModelsMapper.Map();
         
-        public HomeController(ITaskLogic taskLogic)
+        public HomeController(ITaskManager taskManager)
         {
-            _taskLogic = taskLogic;
+            _taskManager = taskManager;
         }
         
         public IActionResult Index()
         {
-            var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskLogic.GetTasks());
+            var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskManager.GetTasks());
             
             return View(tasks);
         }
@@ -34,7 +34,7 @@ namespace ToDoListWebApp.Controllers
             var task = _mapper.Map<Task>(taskView);
             task.Status = TaskStatus.Normal;
             
-            _taskLogic.CreateTask(task);
+            _taskManager.CreateTask(task);
 
             return Redirect("~/Home/Index");
         }
@@ -46,7 +46,7 @@ namespace ToDoListWebApp.Controllers
                 Id = taskId,
                 Status = TaskStatus.Done,
             };
-            _taskLogic.UpdateTaskStatus(taskForUpdate);
+            _taskManager.UpdateTaskStatus(taskForUpdate);
             
             return Redirect("~/Home/Index");
         }

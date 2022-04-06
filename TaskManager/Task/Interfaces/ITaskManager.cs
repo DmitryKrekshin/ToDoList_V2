@@ -3,7 +3,7 @@ using ToDoListService;
 
 namespace TaskManager
 {
-    public interface ITaskLogic
+    public interface ITaskManager
     {
         /// <summary>
         /// Получить все задачи
