@@ -13,17 +13,18 @@
     @foreach (var task in Model)
     {
         <div class="row">
-            <div class="col-1">
-                <a asp-action="TaskDone" asp-route-taskId="@task.Id"><input type="checkbox"></a>
+            <div>
+                <button id="{@task.Id}_TaskDone" taskId="@task.Id" class="btn btn-light" type="button" role="checkbox">
+                    <i class="bi bi-check-circle"></i>
+                </button>
             </div>
-            @task.Name
+            <div class="col-auto">
+                <p class="form-text">@task.Name</p>
+            </div>
         </div>
-
     }
 </div>
 
 @await Html.PartialAsync("AddTaskModal", new TaskView())
-@section Scripts
-{
-    @{ <partial name="_ValidationScriptsPartial" /> }
-}
+
+<script src="js/Index.js"></script>
