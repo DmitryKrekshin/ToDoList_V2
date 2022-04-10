@@ -26,20 +26,19 @@ namespace ToDoListWebApp.Controllers
 
         public IActionResult CreateTask(TaskView taskView)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return Redirect("~/Home/Index");
+                var task = _mapper.Map<Task>(taskView);
+                task.Status = TaskStatus.Normal;
+
+                _taskManager.CreateTask(task);
             }
-            
-            var task = _mapper.Map<Task>(taskView);
-            task.Status = TaskStatus.Normal;
-            
-            _taskManager.CreateTask(task);
 
             return Redirect("~/Home/Index");
         }
 
-        public IActionResult TaskDone(int taskId)
+        [HttpPost]
+        public StatusCodeResult TaskDone(int taskId)
         {
             var taskForUpdate = new Task
             {
@@ -48,7 +47,7 @@ namespace ToDoListWebApp.Controllers
             };
             _taskManager.UpdateTaskStatus(taskForUpdate);
             
-            return Redirect("~/Home/Index");
+            return Ok();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
