@@ -4,6 +4,10 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\TaskService\TaskService.csproj" />
       <ProjectReference Include="..\TaskManager\TaskManager.csproj" />
@@ -15,6 +19,14 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\Icons\Checkbox\group-61_116031.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\Shared\ViewComponents" />
     </ItemGroup>
 
 </Project>
