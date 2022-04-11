@@ -20,7 +20,6 @@ namespace ToDoListWebApp.Controllers
         public IActionResult Index()
         {
             var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskManager.GetTasks());
-            
             return View(tasks);
         }
 
