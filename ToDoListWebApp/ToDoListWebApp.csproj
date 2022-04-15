@@ -23,10 +23,7 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\Icons\Checkbox\group-61_116031.svg" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Views\Shared\ViewComponents" />
+      <_ContentIncludedByDefault Remove="Views\Task\_TaskEditForm.cshtml" />
     </ItemGroup>
 
 </Project>

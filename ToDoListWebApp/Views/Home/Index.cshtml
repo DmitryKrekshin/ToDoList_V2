@@ -12,7 +12,7 @@
 <div class="container">
     @foreach (var task in Model)
     {
-        <div class="row">
+        <div id="{@task.Id}_TaskInfo" class="row">
             <div>
                 <button id="{@task.Id}_TaskDone" taskId="@task.Id" class="btn btn-light" type="button">
                     <i class="bi bi-check-circle"></i>
@@ -21,6 +21,14 @@
             <div class="col">
                 <p class="form-text">@task.Name</p>
             </div>
+            <div id="{@task.Id}_TaskBtnGroup" class="col-2" style="visibility: hidden">
+                <button id="{@task.Id}_EditTask" taskId="@task.Id" class="btn btn-light" type="button">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+            </div>
+        </div>
+        <div style="display: none" id="{@task.Id}_TaskEditPanel">
+            @await Html.PartialAsync("Task/_TaskEditForm", task)
         </div>
         <hr>
     }
