@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const taskDoneButtons = document.querySelectorAll('button[id*="TaskDone"]');
     taskDoneButtons.forEach(n => n.addEventListener("click", taskDone));
+    
     // const editBtn = document.querySelectorAll('button[id*="EditTask"]');
     // editBtn.forEach(btn => btn.addEventListener("click", showTaskBtn));
 });
