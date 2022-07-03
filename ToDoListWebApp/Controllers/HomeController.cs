@@ -17,7 +17,7 @@ namespace ToDoListWebApp.Controllers
             _taskManager = taskManager;
         }
 
-        [HttpGet]
+        [HttpGet, Route("")]
         public IActionResult Index()
         {
             var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskManager.GetTasks());
@@ -35,7 +35,7 @@ namespace ToDoListWebApp.Controllers
                 _taskManager.CreateTask(task);
             }
 
-            return Redirect("~/Home/Index");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -60,6 +60,13 @@ namespace ToDoListWebApp.Controllers
                 Status = TaskStatus.Done,
             };
             _taskManager.UpdateTaskStatus(taskForUpdate);
+
+            return Ok();
+        }
+
+        public IActionResult DeleteTask(int taskId)
+        {
+            _taskManager.DeleteTask(taskId);
 
             return Ok();
         }

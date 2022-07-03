@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const saveChangesBtn = document.querySelectorAll('button[id*="SaveChanges"]');
     saveChangesBtn.forEach(btn => btn.addEventListener("click", saveChanges));
+
+    const deleteBtn = document.querySelectorAll('button[id*="DeleteTask"]');
+    deleteBtn.forEach(btn => btn.addEventListener("click", deleteTask));
 });
 
 function taskDone(e) {
@@ -55,7 +58,7 @@ function hideTaskEditForm(e) {
     taskEditPanel.style.display = "none";
 
     changeInputShowValidationMessage(taskId, false);
-    
+
     const taskInfo = document.querySelector(`div[id="{${taskId}}_TaskInfo"]`);
     taskInfo.style.display = "flex";
 }
@@ -64,21 +67,28 @@ function saveChanges(e) {
     const taskId = parseInt(e.currentTarget.attributes.taskId.value);
     const text = document.querySelector(`input[id="{${taskId}}_EditInput"]`).value;
 
-    if(!text.trim()){
+    if (!text.trim()) {
         changeInputShowValidationMessage(taskId, true);
         return;
     }
     changeInputShowValidationMessage(taskId, false);
-    
+
     fetch(`Home/UpdateTask?id=${taskId}&name=${text}`, {method: 'POST'})
-        .then(response => response.ok ? location.reload(): _);
+        .then(response => response.ok ? location.reload() : _);
 }
 
 function changeInputShowValidationMessage(taskId, isVisible) {
     let display = 'none';
-    if(isVisible){
+    if (isVisible) {
         display = 'block';
     }
-    
+
     document.querySelector(`div[id="{${taskId}}_TaskEditPanel"]`).querySelector('span.text-danger').style.display = display;
+}
+
+function deleteTask(e) {
+    const taskId = e.currentTarget.attributes.taskId.value;
+    
+    fetch(`/Home/DeleteTask?taskId=${taskId}`, {method: 'POST'})
+        .then(response => response.ok ? location.reload() : _);
 }

@@ -24,6 +24,9 @@
                 <button id="{@task.Id}_EditTask" taskId="@task.Id" class="btn btn-light" type="button">
                     <i class="bi bi-pencil-square"></i>
                 </button>
+                <button id="{@task.Id}_DeleteTask" taskId="@task.Id" class="btn btn-light" type="button">
+                    <i class="bi bi-trash"></i>
+                </button>
             </div>
         </div>
         <div style="display: none" id="{@task.Id}_TaskEditPanel">
@@ -34,4 +37,4 @@
 </div>
 
 @await Html.PartialAsync("AddTaskModal", new TaskView())
-<script src="js/Index.js"></script>
+<script src="@Url.Content("~/js/Index.js")" asp-append-version="true" type="text/javascript"></script>
