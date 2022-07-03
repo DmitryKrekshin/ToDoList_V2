@@ -2,7 +2,6 @@
     ViewData["Title"] = "Tasks";
     @model IEnumerable<TaskView>
 }
-
 <h2>Ваши задачи на сегодня</h2>
 
 <button class="btn btn-light mb-3" data-toggle="modal" data-target="#CreateTask">
@@ -35,5 +34,4 @@
 </div>
 
 @await Html.PartialAsync("AddTaskModal", new TaskView())
-
 <script src="js/Index.js"></script>

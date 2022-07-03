@@ -1,19 +1,18 @@
 @model TaskView
 
-<form id="{@Model.Id}_EditForm">
-    <div class="row mb-2">
-        <div class="col">
-            <input id="{@Model.Id}_EditInput" taskId="@Model.Id" type="text" class="form-control">
-        </div>
+<div class="row mb-2">
+    <div class="col">
+        <input id="{@Model.Id}_EditInput" taskId="@Model.Id" type="text" class="form-control">
+        <span class="text-danger" style="display: none">Введите название задачи</span>
     </div>
-    <div class="row">
-        <div class="col">
-            <button id="{@Model.Id}_SaveChanges" taskId="@Model.Id" type="submit" class="btn btn-success btn-sm mr-1">
-                Сохранить
-            </button>
-            <button id="{@Model.Id}_Cancel" taskId="@Model.Id" type="button" class="btn btn-danger btn-sm">
-                Отмена
-            </button>
-        </div>
+</div>
+<div class="row">
+    <div class="col">
+        <button id="{@Model.Id}_SaveChanges" taskId="@Model.Id" type="button" class="btn btn-success btn-sm mr-1">
+            Сохранить
+        </button>
+        <button id="{@Model.Id}_Cancel" taskId="@Model.Id" type="button" class="btn btn-danger btn-sm">
+            Отмена
+        </button>
     </div>
-</form>
+</div>
