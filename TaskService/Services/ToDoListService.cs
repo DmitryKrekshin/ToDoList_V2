@@ -41,7 +41,21 @@ namespace ToDoListService
         }
 
         /// <inheritdoc />
-        public void UpdateStatusTask(TaskEntity taskEntity)
+        public void UpdateTaskName(TaskEntity taskEntity)
+        {
+            var taskToUpdate = _context.Tasks.Find(taskEntity.Id);
+            
+            if (taskToUpdate is null)
+            {
+                throw new NullReferenceException("Task doesn't exists");
+            }
+
+            taskToUpdate.Name = taskEntity.Name;
+            _context.SaveChanges();
+        }
+
+        /// <inheritdoc />
+        public void UpdateTaskStatus(TaskEntity taskEntity)
         {
             var taskToUpdate = _context.Tasks.Find(taskEntity.Id);
 

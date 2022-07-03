@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AutoMapper;
 using ToDoListService;
@@ -23,6 +24,7 @@ namespace TaskManager
         /// <inheritdoc/>
         public void CreateTask(Task task)
         {
+            task.CreateDate = DateTime.Now;
             _service.AddTask(_mapper.Map<TaskEntity>(task));
         }
 
@@ -35,7 +37,13 @@ namespace TaskManager
         /// <inheritdoc/>
         public void UpdateTaskStatus(Task task)
         {
-            _service.UpdateStatusTask(_mapper.Map<TaskEntity>(task));
+            _service.UpdateTaskStatus(_mapper.Map<TaskEntity>(task));
+        }
+
+        /// <inheritdoc/>
+        public void UpdateTaskName(Task task)
+        {
+            _service.UpdateTaskName(_mapper.Map<TaskEntity>(task));
         }
 
         /// <inheritdoc/>

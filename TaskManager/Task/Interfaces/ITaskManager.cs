@@ -8,7 +8,7 @@ namespace TaskManager
         /// <summary>
         /// Получить все задачи
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Коллекция объектов Task</returns>
         IEnumerable<Task> GetTasks();
         /// <summary>
         /// Создать задачу
@@ -21,8 +21,11 @@ namespace TaskManager
         /// <summary>
         /// Обновить статус задачи
         /// </summary>
-        /// <param name="task"></param>
         void UpdateTaskStatus(Task task);
+        /// <summary>
+        /// Изменить назваие задачи
+        /// </summary>
+        void UpdateTaskName(Task task);
         /// <summary>
         /// Удалить задачу
         /// </summary>

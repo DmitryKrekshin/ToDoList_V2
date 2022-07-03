@@ -11,18 +11,20 @@ namespace ToDoListWebApp.Controllers
     {
         private readonly ITaskManager _taskManager;
         private readonly IMapper _mapper = ModelsMapper.Map();
-        
+
         public HomeController(ITaskManager taskManager)
         {
             _taskManager = taskManager;
         }
-        
+
+        [HttpGet]
         public IActionResult Index()
         {
             var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskManager.GetTasks());
             return View(tasks);
         }
 
+        [HttpPost]
         public IActionResult CreateTask(TaskView taskView)
         {
             if (ModelState.IsValid)
@@ -37,6 +39,19 @@ namespace ToDoListWebApp.Controllers
         }
 
         [HttpPost]
+        public IActionResult UpdateTask(int id, string name)
+        {
+            var task = new Task
+            {
+                Id = id,
+                Name = name
+            };
+            _taskManager.UpdateTaskName(task);
+
+            return Ok();
+        }
+
+        [HttpPost]
         public StatusCodeResult TaskDone(int taskId)
         {
             var taskForUpdate = new Task
@@ -45,7 +60,7 @@ namespace ToDoListWebApp.Controllers
                 Status = TaskStatus.Done,
             };
             _taskManager.UpdateTaskStatus(taskForUpdate);
-            
+
             return Ok();
         }
 
