@@ -1,6 +1,10 @@
 'use strict'
 
 document.addEventListener("DOMContentLoaded", () => {
+    initializeEventListeners();
+});
+
+function initializeEventListeners() {
     const taskInfoPanel = document.querySelectorAll('div[id*="TaskInfo"]');
     taskInfoPanel.forEach(g => g.addEventListener("mouseover", showTaskBtnGroup));
     taskInfoPanel.forEach(g => g.addEventListener("mouseout", hideTaskBtnGroup));
@@ -19,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const deleteBtn = document.querySelectorAll('button[id*="DeleteTask"]');
     deleteBtn.forEach(btn => btn.addEventListener("click", deleteTask));
-});
+}
 
 function taskDone(e) {
     const taskId = e.currentTarget.attributes.taskId.value;
