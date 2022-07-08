@@ -47,7 +47,7 @@ function showTaskEditForm(e) {
 }
 
 function fillTaskEditFormWithData(taskEditPanel, taskInfo) {
-    let taskId = parseInt(/.\{(.)\}./gm.exec(taskInfo.id)[1]);
+    let taskId = parseInt(/.*\{(.*)\}./gm.exec(taskInfo.id)[1]);
     let taskText = taskInfo.querySelector(`p[id="{${taskId}}_TaskName"]`).textContent;
     taskEditPanel.querySelector(`input[id="{${taskId}}_EditInput"]`).value = taskText;
 }
