@@ -17,7 +17,7 @@ namespace ToDoListWebApp.Controllers
             _taskManager = taskManager;
         }
 
-        [HttpGet, Route("")]
+        [HttpGet]
         public IActionResult Index()
         {
             var tasks = _mapper.Map<IEnumerable<TaskView>>(_taskManager.GetTasks());
