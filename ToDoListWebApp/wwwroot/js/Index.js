@@ -73,10 +73,10 @@ function saveChanges(e) {
     }
     changeInputShowValidationMessage(taskId, false);
 
-    fetch(`Home/UpdateTask?id=${taskId}&name=${text}`, {method: 'POST'})
+    fetch(`/Home/UpdateTask?id=${taskId}&name=${text}`, {method: 'POST'})
         .then(response => {
-            if (response.ok) {
-                location.reload();
+            if(response.redirected){
+                window.location.href = response.url;
             }
         });
 }
@@ -95,8 +95,8 @@ function deleteTask(e) {
     
     fetch(`/Home/DeleteTask?taskId=${taskId}`, {method: 'POST'})
         .then(response => {
-            if (response.ok) {
-                location.reload();
+            if(response.redirected){
+                window.location.href = response.url;
             }
         });
 }

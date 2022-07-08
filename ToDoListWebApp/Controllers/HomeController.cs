@@ -48,7 +48,7 @@ namespace ToDoListWebApp.Controllers
             };
             _taskManager.UpdateTaskName(task);
 
-            return Ok();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -68,7 +68,7 @@ namespace ToDoListWebApp.Controllers
         {
             _taskManager.DeleteTask(taskId);
 
-            return Ok();
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
