@@ -74,7 +74,11 @@ function saveChanges(e) {
     changeInputShowValidationMessage(taskId, false);
 
     fetch(`Home/UpdateTask?id=${taskId}&name=${text}`, {method: 'POST'})
-        .then(response => response.ok ? location.reload() : _);
+        .then(response => {
+            if (response.ok) {
+                location.reload();
+            }
+        });
 }
 
 function changeInputShowValidationMessage(taskId, isVisible) {
@@ -90,5 +94,9 @@ function deleteTask(e) {
     const taskId = e.currentTarget.attributes.taskId.value;
     
     fetch(`/Home/DeleteTask?taskId=${taskId}`, {method: 'POST'})
-        .then(response => response.ok ? location.reload() : _);
+        .then(response => {
+            if (response.ok) {
+                location.reload();
+            }
+        });
 }
