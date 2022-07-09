@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoListService;
 
-namespace ToDoListService.Migrations
+namespace ToDoListWebApp.Migrations.ToDoList
 {
     [DbContext(typeof(ToDoListContext))]
-    [Migration("20220209174948_changTask")]
-    partial class changTask
+    [Migration("20220709060400_UserMigration")]
+    partial class UserMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace ToDoListService.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.13");
 
-            modelBuilder.Entity("TaskService.TaskEntity", b =>
+            modelBuilder.Entity("ToDoListService.TaskEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
