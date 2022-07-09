@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoListService;
 
-namespace ToDoListService.Migrations
+namespace ToDoListWebApp.Migrations.ToDoList
 {
     [DbContext(typeof(ToDoListContext))]
     partial class ToDoListContextModelSnapshot : ModelSnapshot

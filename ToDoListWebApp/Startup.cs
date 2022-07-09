@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TaskManager;
 using ToDoListService;
+using UserService;
 
 namespace ToDoListWebApp
 {
@@ -23,10 +24,14 @@ namespace ToDoListWebApp
         {
             services.AddDbContext<ToDoListContext>(options =>
             {
-                options.UseSqlite(Configuration.GetConnectionString("Default"));
+                options.UseSqlite(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("ToDoListWebApp"));
             });
             services.AddScoped<IToDoListService, ToDoListService.ToDoListService>();
             services.AddScoped<ITaskManager, TaskManager.TaskManager>();
+            services.AddDbContext<UserContext>(options =>
+            {
+                options.UseSqlite(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("ToDoListWebApp"));
+            });
             services.AddControllersWithViews();
         }
 

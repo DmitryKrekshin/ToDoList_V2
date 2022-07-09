@@ -11,6 +11,7 @@
     <ItemGroup>
       <ProjectReference Include="..\TaskService\TaskService.csproj" />
       <ProjectReference Include="..\TaskManager\TaskManager.csproj" />
+      <ProjectReference Include="..\UserService\UserService.csproj" />
     </ItemGroup>
 
     <ItemGroup>
